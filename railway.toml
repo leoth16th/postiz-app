@@ -1,3 +1,9 @@
 [phases.setup]
     nixPkgs = ['nodejs', 'python3']
     aptPkgs = ['build-essential', 'libudev-dev']
+
+    [build]
+  command = "cd apps/web && npm install && npm run build"
+
+[deploy]
+  command = "cd apps/web && npm run start"
